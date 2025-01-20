@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,4 +26,5 @@ public class TripDto {
     private String description;
     private String imageUrl;
     private TypeOfTrip typeOfTrip;
+    private LocalDateTime localDateTime;
 }

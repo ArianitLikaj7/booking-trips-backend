@@ -52,7 +52,7 @@ public class SecurityConfig {
                 "/v3/api-docs.yaml",
                 "/swagger-ui.html",
                 "/swagger-ui/**",
-                "/api/trips/all",
+                "/api/v1/trips/all",
                 "/api/trips/search",
                 "/api/trips/price",
 

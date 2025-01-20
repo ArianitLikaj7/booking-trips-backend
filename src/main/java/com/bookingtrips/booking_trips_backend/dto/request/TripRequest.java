@@ -7,6 +7,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 public class TripRequest {
@@ -46,4 +48,6 @@ public class TripRequest {
 
     @NotNull(message = "Type of trip cannot be null")
     private TypeOfTrip typeOfTrip;
+
+    private LocalDateTime localDateTime;
 }

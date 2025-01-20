@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -47,6 +49,9 @@ public class Trip extends BaseEntity{
 
     @Column(name = "image_url")
     private String imageUrl;
+
+    @Column(name = "local_date_time")
+    private LocalDateTime localDateTime;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type_of_trip")
