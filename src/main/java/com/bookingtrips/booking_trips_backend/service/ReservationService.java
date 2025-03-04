@@ -35,7 +35,7 @@ public class ReservationService {
         reservation.setUserId(authenticationService.getLoggedInUser().getUserId());
         mapTripToReservation(request, reservation);
         updateAvailableSeats(request.getTripId(), request.getSeatNumber());
-        if (reservationRepository.existsByUserIdAndTripId( request.getTripId(), reservation.getUserId())) {
+        if (reservationRepository.existsByUserIdAndTripId(reservation.getUserId(), request.getTripId())) {
             throw new ReservationAlreadyExists(
                     "Reservation with user_id: " + reservation.getUserId() + " in this trip already exists");
         }

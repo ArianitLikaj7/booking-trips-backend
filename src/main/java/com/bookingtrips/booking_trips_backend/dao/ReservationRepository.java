@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
-    boolean existsByUserIdAndTripId(Long tripId,Long userId);
+    boolean existsByUserIdAndTripId(Long userId,Long tripId);
 
     @Query("SELECT r FROM Reservation r WHERE r.tripId = :tripId AND r.userId = :userId")
     List<ReservationDto> findByTripId(Long userId, Long tripId);
