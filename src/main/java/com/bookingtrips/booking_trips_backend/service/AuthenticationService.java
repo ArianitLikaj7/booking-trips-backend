@@ -48,6 +48,8 @@ public class AuthenticationService {
                 .lastName(request.getLastName())
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
+                .email(request.getEmail())
+                .phoneNumber(request.getPhoneNumber())
                 .role(Role.USER)
                 .build();
         userRepository.save(user);

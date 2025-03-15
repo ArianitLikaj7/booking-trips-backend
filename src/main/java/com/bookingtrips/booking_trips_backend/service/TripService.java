@@ -45,12 +45,8 @@ public class TripService {
     }
 
     public List<TripDto> getAllMyTrips() {
-      List<TripDto> trips = tripRepository
-              .findAllByCreatedBy(authenticationService.getLoggedInUser().getUserId());
-        if (trips == null || trips.isEmpty()) {
-            throw new ResourceNotFoundException("No trips found for this user");
-        }
-        return trips;
+      return tripRepository.findAllByCreatedBy(authenticationService.getLoggedInUser().getUserId());
+
     }
 
     public void saveEntity(Trip trip) {
@@ -92,11 +88,7 @@ public class TripService {
     }
 
     public List<TripDto> findTripsByPrice(Double price) {
-        List<TripDto> trips = tripRepository.findTripsByPrice(price);
-        if (trips == null || trips.isEmpty()) {
-            throw new ResourceNotFoundException(String.format("No trips found with price %.2f", price));
-        }
-        return trips;
+        return tripRepository.findTripsByPrice(price);
     }
 
     public Long findAvailableSeats(Long tripId) {

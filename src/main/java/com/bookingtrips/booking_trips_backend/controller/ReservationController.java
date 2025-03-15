@@ -1,6 +1,7 @@
 package com.bookingtrips.booking_trips_backend.controller;
 
 import com.bookingtrips.booking_trips_backend.dto.ReservationDto;
+import com.bookingtrips.booking_trips_backend.dto.ReservationDtoAndUserDto;
 import com.bookingtrips.booking_trips_backend.dto.TripDto;
 import com.bookingtrips.booking_trips_backend.dto.UserDto;
 import com.bookingtrips.booking_trips_backend.dto.request.ReservationRequest;
@@ -34,8 +35,8 @@ public class ReservationController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ReservationDto>> getAllReservations() {
-        List<ReservationDto> reservations = reservationService.getAll();
+    public ResponseEntity<List<ReservationDtoAndUserDto>> getAllReservations() {
+        List<ReservationDtoAndUserDto> reservations = reservationService.getAll();
         return new ResponseEntity<>(reservations, HttpStatus.OK);
     }
 

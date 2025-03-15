@@ -2,6 +2,7 @@ package com.bookingtrips.booking_trips_backend.service;
 
 import com.bookingtrips.booking_trips_backend.dao.ReservationRepository;
 import com.bookingtrips.booking_trips_backend.dto.ReservationDto;
+import com.bookingtrips.booking_trips_backend.dto.ReservationDtoAndUserDto;
 import com.bookingtrips.booking_trips_backend.dto.TripDto;
 import com.bookingtrips.booking_trips_backend.dto.UserDto;
 import com.bookingtrips.booking_trips_backend.dto.request.ReservationRequest;
@@ -50,11 +51,10 @@ public class ReservationService {
         return reservationMapper.toDto(reservationInDb);
     }
 
-    public List<ReservationDto> getAll() {
-        List<Reservation> trips = reservationRepository.findAll();
-        return trips.stream()
-                .map(reservationMapper::toDto)
-                .collect(Collectors.toList());
+
+
+    public List<ReservationDtoAndUserDto> getAll() {
+        return reservationRepository.getReservationsByAdminId(authenticationService.getLoggedInUser().getUserId());
     }
 
     public List<TripDto> myReservation() {

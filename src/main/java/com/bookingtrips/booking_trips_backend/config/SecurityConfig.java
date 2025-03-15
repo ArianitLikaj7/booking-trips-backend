@@ -55,6 +55,7 @@ public class SecurityConfig {
                 "/api/v1/trips/all",
                 "/api/trips/search",
                 "/api/trips/price",
+                "/api/v1/reservations/**"
 
         };
     }
